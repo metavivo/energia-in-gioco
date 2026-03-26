@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Energia in Gioco</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Gioco didattico</p>
+        <h1>Energia in Gioco</h1>
+        <p class="intro">
+          Scopri come l'energia potenziale gravitazionale si trasforma in energia cinetica.
+          Modifica la situazione, osserva il moto del carrello e rispondi alle sfide.
+        </p>
+      </div>
+      <div class="score-card">
+        <span>Punti</span>
+        <strong id="score">0</strong>
+        <p id="streak-label">Serie corretta: 0</p>
+      </div>
+    </section>
+
+    <section class="layout-grid">
+      <article class="panel controls-panel">
+        <h2>Laboratorio</h2>
+        <label>
+          Massa del carrello
+          <input id="mass" type="range" min="1" max="10" value="4">
+          <span><strong id="mass-value">4</strong> kg</span>
+        </label>
+
+        <label>
+          Altezza iniziale
+          <input id="height" type="range" min="1" max="12" value="6">
+          <span><strong id="height-value">6</strong> m</span>
+        </label>
+
+        <label>
+          Velocita iniziale
+          <input id="velocity" type="range" min="0" max="12" value="0">
+          <span><strong id="velocity-value">0</strong> m/s</span>
+        </label>
+
+        <label>
+          Attrito
+          <input id="friction" type="range" min="0" max="60" value="10">
+          <span><strong id="friction-value">10</strong>%</span>
+        </label>
+
+        <div class="button-row">
+          <button id="simulate-btn" type="button">Avvia simulazione</button>
+          <button id="reset-btn" type="button" class="secondary">Reset</button>
+        </div>
+
+        <div class="formula-card">
+          <h3>Formule chiave</h3>
+          <p><strong>Energia potenziale:</strong> Ep = m x g x h</p>
+          <p><strong>Energia cinetica:</strong> Ec = 1/2 x m x v^2</p>
+          <p><strong>Energia meccanica:</strong> Em = Ep + Ec</p>
+        </div>
+      </article>
+
+      <article class="panel simulation-panel">
+        <div class="scene-header">
+          <h2>Simulazione</h2>
+          <p id="scene-status">Imposta i valori e premi "Avvia simulazione".</p>
+        </div>
+
+        <div class="scene">
+          <div class="hill"></div>
+          <div id="cart" class="cart" aria-hidden="true"></div>
+          <div class="ground-line"></div>
+        </div>
+
+        <div class="energy-grid">
+          <div class="energy-card potential">
+            <span>Energia potenziale</span>
+            <strong id="potential-energy">0 J</strong>
+          </div>
+          <div class="energy-card kinetic">
+            <span>Energia cinetica</span>
+            <strong id="kinetic-energy">0 J</strong>
+          </div>
+          <div class="energy-card total">
+            <span>Energia meccanica</span>
+            <strong id="total-energy">0 J</strong>
+          </div>
+        </div>
+
+        <div class="explanation" id="explanation-box">
+          L'energia totale rimane quasi costante se l'attrito e basso; con attrito, una parte si dissipa.
+        </div>
+      </article>
+
+      <article class="panel quiz-panel">
+        <h2>Sfida veloce</h2>
+        <p id="question-text">Premi "Nuova domanda" per iniziare il quiz.</p>
+        <div id="answers" class="answers"></div>
+        <div class="button-row">
+          <button id="question-btn" type="button">Nuova domanda</button>
+        </div>
+        <p id="feedback" class="feedback neutral">Qui comparira il feedback della tua risposta.</p>
+      </article>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
