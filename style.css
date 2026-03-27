@@ -237,7 +237,7 @@ button.secondary {
 }
 
 .cart.running {
-  animation: ride 2.6s cubic-bezier(0.24, 0.76, 0.28, 1) forwards;
+  animation: ride 2.4s linear forwards;
 }
 
 @keyframes ride {
@@ -246,10 +246,25 @@ button.secondary {
     top: 78px;
     transform: rotate(-29deg) scale(1);
   }
-  65% {
-    left: 118px;
+  20% {
+    left: 205px;
+    top: 98px;
+    transform: rotate(-29deg) scale(1.01);
+  }
+  45% {
+    left: 165px;
+    top: 124px;
+    transform: rotate(-24deg) scale(1.02);
+  }
+  70% {
+    left: 112px;
     top: 155px;
-    transform: rotate(-12deg) scale(1.04);
+    transform: rotate(-16deg) scale(1.03);
+  }
+  85% {
+    left: 56px;
+    top: 196px;
+    transform: rotate(-8deg) scale(1.02);
   }
   100% {
     left: 18px;
@@ -390,10 +405,25 @@ button.secondary {
       top: 80px;
       transform: rotate(-29deg) scale(1);
     }
-    65% {
+    20% {
+      left: 154px;
+      top: 94px;
+      transform: rotate(-29deg) scale(1.01);
+    }
+    45% {
+      left: 126px;
+      top: 111px;
+      transform: rotate(-24deg) scale(1.02);
+    }
+    70% {
       left: 92px;
       top: 136px;
-      transform: rotate(-12deg) scale(1.04);
+      transform: rotate(-16deg) scale(1.03);
+    }
+    85% {
+      left: 42px;
+      top: 156px;
+      transform: rotate(-8deg) scale(1.02);
     }
     100% {
       left: 10px;
